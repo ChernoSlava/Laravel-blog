@@ -12,6 +12,12 @@
         <div class="container mt-4">
             <h1>О блоге</h1>
             <p>Эксперименты с Ларавелем на Хекслете</p>
+            <div style="display: flex;gap:15px;">
+                @foreach ($tags as $tag)
+                    <p>{{ $tag }}</p>
+                @endforeach
+            </div>
+            <!-- <p>{{ implode(', ', $tags) }}</p> -->
         </div>
     </body>
 </html>
