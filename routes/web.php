@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Article;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,6 +23,7 @@ Route::get('about', function () {
     return view('about', ['tags' => $tags]);
 });
 
-Route::get('articles', function () {
-    return view('articles');
+Route::get('/articles', function () {
+    $articles = Article::all();
+    return view('articles', ['articles' => $articles]);
 });
