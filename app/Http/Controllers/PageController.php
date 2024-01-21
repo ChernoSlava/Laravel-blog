@@ -8,10 +8,10 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function about() 
+    public function index() 
     {
         $tags = ['обучение', 'программирование', 'php', 'oop'];
-        return view('about', ['tags' => $tags]);
+        return view('about.index', compact('tags'));
     }
 
 

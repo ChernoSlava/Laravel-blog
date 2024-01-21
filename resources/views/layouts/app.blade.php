@@ -10,7 +10,7 @@
     </head>
     <body>
         <div class="container mt-4">
-            <a href="/">back</a>
+            @yield('links')
             <h1>@yield('header')</h1>
             <div>
                 @yield('content')

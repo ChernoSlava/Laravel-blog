@@ -2,6 +2,10 @@
 
 @section('title', 'О блоге')
 
+@section('links')
+    <a href="/">Main page</a>
+@endsection
+
 @section('header', 'О блоге')
 
 @section('content')
