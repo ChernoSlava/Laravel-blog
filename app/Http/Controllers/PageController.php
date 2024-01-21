@@ -14,11 +14,6 @@ class PageController extends Controller
         return view('about', ['tags' => $tags]);
     }
 
-    public function articles()
-    {
-        $articles = Article::all();
-        return view('articles', ['articles' => $articles]);
-    }
 
     public function welcome()
     {
