@@ -22,14 +22,15 @@
                 </div>
             {!! Form::close() !!}
         </div>    
-        <ul>
+        <ul style="max-width: 250px;">
             @foreach ($articles as $article)
-            <a href="{{ route('articles.show', ['id' => $article->id]) }}">
                 <li>
-                    <h4>Name: {{ $article->name }}</h4>
+                    <a href="{{ route('articles.show', ['id' => $article->id]) }}">
+                        <h4>Name: {{ $article->name }}</h4>
+                    </a>
                     <div>Description: {{Str::limit($article->body, 200)}}</div>
+                    <a href="{{ route('article.edit', ['id' => $article->id]) }}">Edit</a>
                 </li>
-            </a>
             @endforeach
         </ul>
     </div>

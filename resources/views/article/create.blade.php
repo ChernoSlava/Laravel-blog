@@ -8,7 +8,7 @@
 @endsection
 
 @section('header', 'Create article')
-
+<!-- 
 @section('content')
     <div class="container mt-4">   
         @if ($errors->any())
@@ -30,6 +30,16 @@
                 {{ Form::label('body', 'Содержание', ['class' => 'custom-create_label']) }}
                 {{ Form::textarea('body'), ['class' => 'custom-create_input'] }}<br>
             </div>
+            {{ Form::submit('Создать') }}
+        {{ Form::close() }}
+    </div>
+@endsection -->
+
+
+@section('content')
+    <div class="container mt-4">   
+        {{ Form::model($article, ['route' => 'article.store', 'class' => 'custom-create']) }}
+            @include('article.form')
             {{ Form::submit('Создать') }}
         {{ Form::close() }}
     </div>
