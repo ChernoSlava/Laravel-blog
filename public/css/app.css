@@ -1,6 +1,39 @@
 .paginate {
     display: flex;
 }
-.paginate svg {
-    max-width: 40px;
+
+.paginate nav a {
+    color: #007bff;
+    text-decoration: none;
+    margin-right: 10px;
+}
+.customForm {
+    margin-bottom: 20px;
+    display: flex;
+    gap: 10px;
+}
+
+.customForm label {
+    font-weight: bold;
+}
+
+.customForm input {
+    width: 200px;
+}
+
+
+
+.customForm_input {
+
+}
+.customForm_btn {
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+.customForm input[type="submit"]  {
+    background-color: #4CAF50;
+    color: white;
+    max-height: 30px;
+    max-width: 100px;
 }

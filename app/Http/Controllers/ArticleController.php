@@ -7,10 +7,17 @@ use App\Models\Article;
 
 class ArticleController extends Controller
 {
-    public function index()
-    {   
-        $articles = Article::cursorPaginate(2);
-        return view('article.index', compact('articles'));
+    public function index(Request $request)
+    {
+        $q = $request->input('q');
+        if ($q) {
+            $articles = Article::where('name', 'like', "%{$q}%")
+                                ->orWhere('body', 'like', "%{$q}%")
+                                ->simplePaginate(3);
+        } else {
+            $articles = Article::simplePaginate(3);
+        }
+        return view('article.index', compact('articles', 'q'));
     }
 
     public function show($id)

@@ -9,7 +9,18 @@
 @section('header', 'Статьи')
 
 @section('content')
-    <div class="container mt-4">        
+    <div class="container mt-4">
+        <div>
+            {!! Form::open(['route' => 'article.index', 'method' => 'get', 'class' => 'customForm']) !!}
+                <div class="customForm_input">
+                    {!! Form::label('q', 'Поиск:') !!}
+                    {!! Form::text('q', $q, ['class' => 'customForm']) !!}
+                </div>
+                <div class="customForm_btn">
+                    {!! Form::submit('Найти', ['class' => 'customForm']) !!}
+                </div>
+            {!! Form::close() !!}
+        </div>    
         <ul>
             @foreach ($articles as $article)
             <a href="{{ route('articles.show', ['id' => $article->id]) }}">
