@@ -16,6 +16,6 @@
     </head>
     <body class="antialiased">
         <a href="{{ route('about.index') }}">About</a>
-        <a href="{{ route('article.index') }}">Articles</a>
+        <a href="{{ route('articles.index') }}">Articles</a>
     </body>
 </html>

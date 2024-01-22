@@ -4,14 +4,14 @@
 
 @section('links')
     <a href="/">Main page</a>
-    <a href="{{ route('article.index') }}">All articles</a>
+    <a href="{{ route('articles.index') }}">All articles</a>
 @endsection
 
 @section('header', 'Edit article')
 
 @section('content')
     <div class="container mt-4">   
-        {{ Form::model($article, ['route' => ['article.update', $article], 'method' => 'PATCH', 'class' => 'custom-create']) }}
+        {{ Form::model($article, ['route' => ['articles.update', $article], 'method' => 'PATCH', 'class' => 'custom-create']) }}
             @include('article.form')
             {{ Form::submit('Обновить') }}
         {{ Form::close() }}

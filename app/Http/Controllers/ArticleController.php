@@ -2,11 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use Illuminate\Http\Request;
 use App\Models\Article;
+use Illuminate\Http\Request;
 
 class ArticleController extends Controller
 {
+    /**
+     * Display a listing of the resource.
+     */
     public function index(Request $request)
     {
         $q = $request->input('q');
@@ -20,18 +23,18 @@ class ArticleController extends Controller
         return view('article.index', compact('articles', 'q'));
     }
 
-    public function show($id)
-    {   
-        $article = Article::findOrFail($id);
-        return view('article.show', compact('article'));
-    }
-
+    /**
+     * Show the form for creating a new resource.
+     */
     public function create()
     {
         $article = new Article();
         return view('article.create', compact('article'));
     }
 
+    /**
+     * Store a newly created resource in storage.
+     */
     public function store(Request $request)
     {
         $data = $this->validate($request, [
@@ -44,15 +47,30 @@ class ArticleController extends Controller
         $article->save();
 
         return redirect()
-            ->route('article.index');
+            ->route('articles.index');
     }
 
+    /**
+     * Display the specified resource.
+     */
+    public function show($id)
+    {   
+        $article = Article::findOrFail($id);
+        return view('article.show', compact('article'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     */
     public function edit($id)
     {
         $article = Article::findOrFail($id);
         return view('article.edit', compact('article'));
     }
 
+    /**
+     * Update the specified resource in storage.
+     */
     public function update(Request $request, $id)
     {
         $article = Article::findOrFail($id);
@@ -64,15 +82,18 @@ class ArticleController extends Controller
         $article->fill($data);
         $article->save();
         return redirect()
-            ->route('article.index');
+            ->route('articles.index');
     }
 
+    /**
+     * Remove the specified resource from storage.
+     */
     public function destroy($id)
     {
         $article = Article::find($id);
         if ($article) {
         $article->delete();
         }
-        return redirect()->route('article.index');
+        return redirect()->route('articles.index');
     }
 }
