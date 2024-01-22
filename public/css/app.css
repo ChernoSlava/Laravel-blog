@@ -47,3 +47,14 @@ a {
 .custom-create_label {
     display: block;
 }
+
+li {
+    display: flex;
+}
+.btns-box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    gap: 20px;
+}

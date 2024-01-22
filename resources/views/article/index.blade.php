@@ -25,11 +25,18 @@
         <ul style="max-width: 250px;">
             @foreach ($articles as $article)
                 <li>
-                    <a href="{{ route('articles.show', ['id' => $article->id]) }}">
-                        <h4>Name: {{ $article->name }}</h4>
-                    </a>
-                    <div>Description: {{Str::limit($article->body, 200)}}</div>
-                    <a href="{{ route('article.edit', ['id' => $article->id]) }}">Edit</a>
+                    <div>
+                        <a href="{{ route('articles.show', ['id' => $article->id]) }}">
+                            <h4>Name: {{ $article->name }}</h4>
+                        </a>
+                        <div>Description: {{Str::limit($article->body, 200)}}</div>
+                    </div>
+                    <div class="btns-box">
+                        <a href="{{ route('article.edit', ['id' => $article->id]) }}">Edit</a>
+                        {!! Form::open(['route' => ['article.destroy', $article->id], 'method' => 'delete', 'style' => 'display:inline']) !!}
+                            {!! Form::submit('Delete', ['class' => 'btn btn-link', 'onclick' => 'return confirm("Are you sure?")']) !!}
+                        {!! Form::close() !!}
+                    </div>
                 </li>
             @endforeach
         </ul>
