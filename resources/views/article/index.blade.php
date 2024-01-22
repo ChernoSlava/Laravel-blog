@@ -4,6 +4,7 @@
 
 @section('links')
     <a href="/">Main page</a>
+    <a href="{{ route('article.create') }}">Create article</a>
 @endsection
 
 @section('header', 'Статьи')

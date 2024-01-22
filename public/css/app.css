@@ -1,3 +1,7 @@
+a {
+    color: black;
+    text-decoration: none;
+}
 .paginate {
     display: flex;
 }
@@ -36,4 +40,10 @@
     color: white;
     max-height: 30px;
     max-width: 100px;
+}
+
+.custom-create {
+}
+.custom-create_label {
+    display: block;
 }
