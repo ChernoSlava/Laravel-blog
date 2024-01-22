@@ -4,7 +4,7 @@
 
 @section('links')
     <a href="/">Main page</a>
-    <a href="{{ route('article.index') }}">All articles</a>
+    <a href="{{ route('articles.index') }}">All articles</a>
 @endsection
 
 @section('header')

@@ -1,10 +1,9 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Models\Article;
 use App\Http\Controllers\PageController;
 use App\Http\Controllers\ArticleController;
-
+use App\Http\Controllers\ArticleCommentController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -20,5 +19,5 @@ Route::get('/',  [PageController::class, 'welcome']);
 
 Route::get('about', [PageController::class, 'index'])->name('about.index');
 
-Route::get('articles', [ArticleController::class, 'index'])->name('article.index');
-Route::get('articles/{id}', [ArticleController::class, 'show'])->name('articles.show');
+Route::resource('articles', ArticleController::class);
+Route::resource('articles.comments', ArticleCommentController::class);
