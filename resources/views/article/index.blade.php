@@ -21,4 +21,6 @@
             @endforeach
         </ul>
     </div>
+    <div class="paginate">{{ $articles->links() }}</div>
+
 @endsection

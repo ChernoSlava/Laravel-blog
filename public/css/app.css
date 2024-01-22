@@ -1,0 +1,6 @@
+.paginate {
+    display: flex;
+}
+.paginate svg {
+    max-width: 40px;
+}
