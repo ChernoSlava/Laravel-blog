@@ -17,7 +17,7 @@
     </div>
 
     @if ($comments->count() > 0)
-        <h3>Комментарии:</h3>
+        <h3 class="commentTitle">Комментарии:</h3>
         <ul>
             @foreach ($comments as $comment)
                 <li>
