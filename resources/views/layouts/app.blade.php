@@ -9,10 +9,10 @@
         <script src="{{ asset('js/app.js') }}"></script>
     </head>
     <body>
-        <div class="container mt-4">
+        <div class="container mt-4 customMainBox">
             @yield('links')
-            <h1>@yield('header')</h1>
-            <div>
+            <h1 class="headingMain">@yield('header')</h1>
+            <div class="contentMain">
                 @yield('content')
             </div>
         </div>

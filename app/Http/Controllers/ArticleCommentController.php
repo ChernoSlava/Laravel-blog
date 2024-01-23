@@ -11,17 +11,18 @@ class ArticleCommentController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Article $article)
+    public function index()
     {
-        //
+        return ArticleComment::all();
     }
+
 
     /**
      * Show the form for creating a new resource.
      */
     public function create(Article $article)
     {
-        //
+        
     }
 
     /**
@@ -29,7 +30,17 @@ class ArticleCommentController extends Controller
      */
     public function store(Request $request, Article $article)
     {
-        //
+        $data = $this->validate($request, [
+            'user' => 'required',
+            'content' => 'required|min:10',
+        ]);
+        $data['user_id'] = 4;
+        $data['article_id'] = $article->id;
+
+        ArticleComment::create($data);
+
+        return redirect()
+            ->route('articles.index');
     }
 
     /**

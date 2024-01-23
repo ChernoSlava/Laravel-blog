@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Article;
 use Illuminate\Http\Request;
+use App\Http\Controllers\ArticleCommentController;
 
 class ArticleController extends Controller
 {
@@ -54,9 +55,11 @@ class ArticleController extends Controller
      * Display the specified resource.
      */
     public function show($id)
-    {   
+    {
         $article = Article::findOrFail($id);
-        return view('article.show', compact('article'));
+        $comments = $article->comments; // Используем отношение для получения комментариев
+
+        return view('article.show', compact('article', 'comments'));
     }
 
     /**

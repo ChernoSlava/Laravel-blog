@@ -10,7 +10,7 @@
 @section('header', 'Статьи')
 
 @section('content')
-    <div class="container mt-4">
+    <div class="container mt-4 customArticlesPage">
         <div>
             {!! Form::open(['route' => 'articles.index', 'method' => 'get', 'class' => 'customForm']) !!}
                 <div class="customForm_input">
@@ -22,7 +22,7 @@
                 </div>
             {!! Form::close() !!}
         </div>    
-        <ul style="max-width: 250px;">
+        <ul>
             @foreach ($articles as $article)
                 <li>
                     <div>

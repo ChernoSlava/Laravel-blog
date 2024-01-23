@@ -12,6 +12,28 @@
 
         <!-- Styles -->
         <style>
+            body {
+                font-family: 'figtree', sans-serif;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100vh;
+                margin: 0;
+                background: linear-gradient(to right, #8e44ad, #3498db);
+            }
+
+            a {
+                margin: 0 10px;
+                text-decoration: none;
+                color: #fff;
+                font-weight: 600;
+                font-size: 28px;
+                transition: color 0.3s ease;
+            }
+
+            a:hover {
+                color: #ffcc00;
+            }
         </style>
     </head>
     <body class="antialiased">

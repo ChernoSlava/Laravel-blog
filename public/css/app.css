@@ -1,7 +1,56 @@
-a {
-    color: black;
-    text-decoration: none;
+body {
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    margin: 0;
+    background: linear-gradient(to right, #8e44ad, #3498db);
 }
+ul {
+    padding: none;
+    padding: 0px 40px
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: #f8f9fa; /* Светлый фон для контейнера */
+    border-radius: 10px; /* Добавьте скругленные углы для контейнера */
+}
+
+h1 {
+    color: #007bff;
+}
+
+a {
+    color: #966d6d;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #ffcc00;
+}
+
+.customMainBox {
+    width: 600px;
+    background: #ffffffa3;
+}
+
+.headingMain {
+    text-align: center;
+}
+.contentMain {
+    display: flex;
+    flex-direction: column;
+}
+
+.customArticlesPage {
+    width: 94%;
+    margin-bottom: 15px;
+    background: #fcfdff61;
+}
+
 .paginate {
     display: flex;
 }
@@ -50,11 +99,59 @@ a {
 
 li {
     display: flex;
+    justify-content: space-between;
 }
 .btns-box {
     display: flex;
     flex-direction: column;
     align-items: center;
-    align-self: center;
+    align-self: end;
     gap: 20px;
+}
+
+.custom-create {
+    max-width: 500px;
+    padding: 20px 40px;
+    border-radius: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 600;
+    color: #343a40; /* Цвет текста меток */
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 8px;
+    box-sizing: border-box;
+    border: 1px solid #ced4da; /* Цвет рамки инпутов */
+    border-radius: 5px;
+}
+
+textarea {
+    resize: vertical;
+}
+
+.btn-primary {
+    background-color: #007bff; /* Цвет кнопки */
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3; /* Цвет кнопки при наведении */
+}
+
+.commentTitle {
+    padding: 0 30px;
 }
