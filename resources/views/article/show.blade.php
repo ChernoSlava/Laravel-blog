@@ -8,11 +8,12 @@
 @endsection
 
 @section('header')
-    {{ $article->name }}
+    {{ $article->name }} 
+    <a href="{{ route('articles.edit', ['article' => $article->id]) }}"><img class="editIco" src="{{ asset('img/pencil.png') }}" alt="Edit"></a>
 @endsection
 
 @section('content')
-    <div class="container mt-4">                
+    <div class="container mt-4 customDescription">                
         <p>{{Str::limit($article->body, 200)}}</p>
     </div>
 
