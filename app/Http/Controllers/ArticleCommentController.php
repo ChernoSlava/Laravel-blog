@@ -11,9 +11,9 @@ class ArticleCommentController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index(Article $article)
+    public function index()
     {
-        //
+        return ArticleComment::all();
     }
 
     /**
