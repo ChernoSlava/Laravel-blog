@@ -18,7 +18,7 @@
 
     @if ($comments->count() > 0)
         <h3 class="commentTitle">Комментарии:</h3>
-        <ul>
+        <ul class="commentsList">
             @foreach ($comments as $comment)
                 <li>
                     {{ $comment->user }}

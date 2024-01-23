@@ -8,8 +8,30 @@ body {
     background: linear-gradient(to right, #8e44ad, #3498db);
 }
 ul {
-    padding: none;
-    padding: 0px 40px
+    margin: 0;
+    margin-bottom: 8px;
+}
+
+.commentsList {
+    max-height: 115px;
+    overflow-y: overlay;
+    border-radius: 5px;
+    scrollbar-width: 3px; /* Для Firefox */
+    scrollbar-color: #007bff #f8f9fa; /* Для Firefox */
+
+    /* Для WebKit (Chrome, Safari) */
+    &::-webkit-scrollbar {
+        width: 3px; /* Ширина скроллбара */
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background-color: #007bff7a; /* Цвет ползунка */
+        border-radius: 5px; /* Скругленные углы ползунка */
+    }
+
+    /* &::-webkit-scrollbar-track {
+        background-color: #f8f9fa;
+    } */
 }
 .container {
     max-width: 800px;
@@ -35,6 +57,7 @@ a:hover {
 .customMainBox {
     width: 600px;
     background: #ffffffa3;
+    height: 600px;
 }
 
 .headingMain {
@@ -47,8 +70,9 @@ a:hover {
 
 .customArticlesPage {
     width: 94%;
-    margin-bottom: 15px;
+    margin-bottom: 35px;
     background: #fcfdff61;
+    height: 400px;
 }
 
 .paginate {
@@ -87,8 +111,9 @@ a:hover {
 .customForm input[type="submit"]  {
     background-color: #4CAF50;
     color: white;
-    max-height: 30px;
+    min-height: 30px;
     max-width: 100px;
+    border-radius: 7px;
 }
 
 .custom-create {
@@ -100,6 +125,8 @@ a:hover {
 li {
     display: flex;
     justify-content: space-between;
+    border-bottom: 1px solid #ced4da;
+    padding-bottom: 10px;
 }
 .btns-box {
     display: flex;

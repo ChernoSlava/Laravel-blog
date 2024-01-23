@@ -27,9 +27,9 @@
                 <li>
                     <div>
                         <a href="{{ route('articles.show', ['article' => $article->id]) }}">
-                            <h4>Name: {{ $article->name }}</h4>
+                            <h4>{{ $article->name }}</h4>
                         </a>
-                        <div>Description: {{Str::limit($article->body, 200)}}</div>
+                        <div>{{Str::limit($article->body, 200)}}</div>
                     </div>
                     <div class="btns-box">
                         <a href="{{ route('articles.edit', ['article' => $article->id]) }}">Edit</a>
