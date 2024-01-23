@@ -21,7 +21,7 @@ class ArticleCommentController extends Controller
      */
     public function create(Article $article)
     {
-        //
+        
     }
 
     /**
@@ -29,7 +29,19 @@ class ArticleCommentController extends Controller
      */
     public function store(Request $request, Article $article)
     {
-        //
+        $data = $this->validate($request, [
+            'user' => 'required',
+            'content' => 'required|min:10',
+        ]);
+        $data['user_id'] = 4;
+        $data['article_id'] = $article->id;
+
+        $article = new ArticleComment();
+        $article->fill($data);
+        $article->save();
+
+        return redirect()
+            ->route('articles.index');
     }
 
     /**

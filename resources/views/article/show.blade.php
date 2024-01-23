@@ -30,4 +30,15 @@
         <p>Нет комментариев</p>
     @endif
 
+    {{ Form::open(['route' => ['articles.comments.store', 'article' => $article->id], 'class' => 'custom-create mt-4']) }}
+        <div class="form-group">
+            {{ Form::hidden('user_id', auth()->id()) }}
+            {{ Form::hidden('article_id', $article->id) }}
+            {{ Form::label('user', 'Add name:') }}
+            {{ Form::text('user', null, ['class' => 'form-control', 'rows' => '4']) }}
+            {{ Form::label('content', 'Add comment:') }}
+            {{ Form::textarea('content', null, ['class' => 'form-control', 'rows' => '4']) }}
+        </div>
+        {{ Form::submit('Отправить', ['class' => 'btn btn-primary']) }}
+    {{ Form::close() }}
 @endsection
