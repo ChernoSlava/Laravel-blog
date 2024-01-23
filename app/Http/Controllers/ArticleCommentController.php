@@ -16,6 +16,7 @@ class ArticleCommentController extends Controller
         return ArticleComment::all();
     }
 
+
     /**
      * Show the form for creating a new resource.
      */
@@ -36,9 +37,7 @@ class ArticleCommentController extends Controller
         $data['user_id'] = 4;
         $data['article_id'] = $article->id;
 
-        $article = new ArticleComment();
-        $article->fill($data);
-        $article->save();
+        ArticleComment::create($data);
 
         return redirect()
             ->route('articles.index');

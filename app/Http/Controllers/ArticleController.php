@@ -55,15 +55,12 @@ class ArticleController extends Controller
      * Display the specified resource.
      */
     public function show($id)
-    {   
+    {
         $article = Article::findOrFail($id);
-        $allComments = app(ArticleCommentController::class)->index();
-
-        $comments = $allComments->where('article_id', $article->id);
+        $comments = $article->comments; // Используем отношение для получения комментариев
 
         return view('article.show', compact('article', 'comments'));
     }
-
 
     /**
      * Show the form for editing the specified resource.
