@@ -39,5 +39,15 @@
     <body class="antialiased">
         <a href="{{ route('about.index') }}">About</a>
         <a href="{{ route('articles.index') }}">Articles</a>
+
+        @if(isset($data))
+            <p>Data from server:</p>
+            <ul>
+                <li><strong>Message:</strong> {{ $data['message'] }}</li>
+                <li><strong>Timestamp:</strong> {{ $data['timestamp'] }}</li>
+            </ul>
+        @else
+            <p>No data received.</p>
+        @endif
     </body>
 </html>
